@@ -10,6 +10,11 @@ class testChess(unittest.TestCase):
     def test_turno_inicial(self):
         self.assertEqual(self.chess.turn, "WHITE")
     
+    def test_cambio_turno(self):
+        self.chess.move(0, 0, 1, 2)
+        self.assertEqual(self.chess.turn, "BLACK")
+        self.chess.move(0, 2, 0, 3)
+        self.assertEqual(self.chess.turn, "WHITE")
 
 
 
