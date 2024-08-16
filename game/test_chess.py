@@ -1,12 +1,14 @@
-import unittest
 from chess import Chess
 from board import Board
+import unittest
 
 
-class test_chess(unittest.TestCase):
+class testChess(unittest.TestCase):
+
+    chess = Chess()
+
     def test_turno_inicial(self):
-        chess_turn = Chess()
-        self.assertEqual(self.chess_turn.turn, "WHITE")
+        self.assertEqual(self.chess.turn, "WHITE")
     
 
 
