@@ -5,15 +5,10 @@ class Chess:
         self.__board__ = Board()
         self.__turn__ = "WHITE"
 
-    def move(
-            self,
-            from_row,
-            from_col,
-            to_row,
-            to_col,
-    ):
+    def move(self,from_row, from_col, to_row,to_col):
         
-        piece = self.__board__.get_piece(from_row, from_col, to_row, to_col)
+        from_piece = self.__board__.get_piece(from_row, from_col)
+        to_piece = self.__board__.get_piece(to_row, to_col)
         self.change_turn()
     @property
     def turn(self):
