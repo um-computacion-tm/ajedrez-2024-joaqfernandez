@@ -4,6 +4,7 @@ class Chess:
     def __init__(self):
         self.__board__ = Board()
         self.__turn__ = "WHITE"
+        print(f"Turno inicial: {self.__turn__}")
 
     def move(self,from_row, from_col, to_row,to_col):
         
