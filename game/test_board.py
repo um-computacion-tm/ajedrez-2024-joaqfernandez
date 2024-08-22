@@ -17,3 +17,6 @@ class TestBoard(unittest.TestCase):
                 "♜      ♜\n"
             )
         )
+        
+if __name__ == '__main__':
+    unittest.main()
