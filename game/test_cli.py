@@ -8,3 +8,16 @@ class TestCli(unittest.TestCase):
         'builtins.input',
         side_effect=['1', '1', '2', '2'], # estos son los valores que simula lo que ingresaria el usuario
     )
+    @patch('builtins.print') # este patch controla lo que hace el print
+    @patch.object(Chess, 'move')
+    def test_happy_path(
+        self,
+        mock_chess_move,
+        mock_print,
+        mock_input,
+    ): #
+        chess = Chess()
+        play(chess)
+        self.assertEqual(mock_input.call_count, 4)
+        self.assertEqual(mock_print.call_count, 2)
+        self.assertEqual(mock_chess_move.call_count, 1)
